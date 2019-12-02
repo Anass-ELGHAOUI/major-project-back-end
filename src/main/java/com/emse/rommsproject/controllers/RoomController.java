@@ -14,27 +14,27 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
 
-    @GetMapping("/api/rooms")
+    @GetMapping("/rooms")
     public List getAllRooms() {
         return roomService.getAllRooms();
     }
 
-    @GetMapping("/api/rooms/{id}")
+    @GetMapping("/rooms/{roomId}")
     public Room getRoom(@PathVariable String roomId){
         return roomService.getRoom(roomId);
     }
 
-    @PostMapping("/api/rooms")
+    @PostMapping("/rooms")
     public void addRoom(@RequestBody Room room) {
         roomService.addRoom(room);
     }
 
-    @PutMapping("/api/rooms/{id}")
+    @PutMapping("/rooms/{roomId}")
     public void updateRoom(@PathVariable String roomId, @RequestBody Room room) {
         roomService.updateRoom(roomId, room);
     }
 
-    @DeleteMapping("/api/rooms/{id}")
+    @DeleteMapping("/rooms/{roomId}")
     public void deleteRoom(@PathVariable String roomId) {
         roomService.deleteRoom(roomId);
     }
